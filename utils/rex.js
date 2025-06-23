@@ -26,7 +26,7 @@ export async function getAccessToken() {
 
 export async function getListings() {
   const token = await getAccessToken();
-  const res = await fetch('https://api.rexsoftware.com/v1/properties', {
+  const res = await fetch('https://api.rexsoftware.com/v1/rex/listings/', {
     headers: { Authorization: `Bearer ${token}` }
   });
 
