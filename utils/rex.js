@@ -1,7 +1,7 @@
 let accessToken = null;
 let tokenExpiry = 0;
 
-export async function getAccessToken() {
+async function getAccessToken() {
   if (accessToken && Date.now() < tokenExpiry) return accessToken;
 
   const response = await fetch('https://api.rexsoftware.com/oauth/token', {
@@ -24,7 +24,7 @@ export async function getAccessToken() {
   return accessToken;
 }
 
-export async function getListings() {
+async function getListings() {
   const token = await getAccessToken();
   const res = await fetch('https://api.rexsoftware.com/v1/rex/listings/', {
     headers: { Authorization: `Bearer ${token}` }
@@ -33,3 +33,5 @@ export async function getListings() {
   if (!res.ok) throw new Error('Failed to fetch listings');
   return await res.json();
 }
+
+module.exports = { getListings };

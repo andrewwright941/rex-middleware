@@ -1,6 +1,6 @@
-import { getListings } from '../utils/rex.js';
+const { getListings } = require('../utils/rex');
 
-export default async function handler(req, res) {
+module.exports = async function (req, res) {
   try {
     const listings = await getListings();
     res.status(200).json(listings);
@@ -8,4 +8,4 @@ export default async function handler(req, res) {
     console.error(err);
     res.status(500).json({ error: 'Failed to fetch listings' });
   }
-}
+};
