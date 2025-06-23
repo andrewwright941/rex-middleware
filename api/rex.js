@@ -1,3 +1,5 @@
+const fetch = require('node-fetch');
+
 let accessToken = null;
 let tokenExpiry = 0;
 

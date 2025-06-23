@@ -2,10 +2,9 @@
   "name": "rex-middleware",
   "version": "1.0.0",
   "scripts": {
-    "dev": "vercel dev",
-    "start": "node api/listings.js"
+    "dev": "vercel dev"
   },
   "dependencies": {
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^2.6.7"
   }
 }
