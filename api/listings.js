@@ -1,4 +1,4 @@
-const { getListings } = require('../utils/rex');
+const { getListings } = require('./rex');
 
 module.exports = async function (req, res) {
   try {
